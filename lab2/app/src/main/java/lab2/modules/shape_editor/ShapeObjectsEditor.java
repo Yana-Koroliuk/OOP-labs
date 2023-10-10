@@ -20,9 +20,21 @@ public class ShapeObjectsEditor extends View implements ShapeObjectsEditorInterf
     public boolean isDrawing = false;
     public Bitmap bitmap;
     public Canvas canvas;
+    public float startX;
+    public float startY;
+    public float endX;
+    public float endY;
 
     public ShapeObjectsEditor(Context context) {
         super(context);
+    }
+
+    public ShapeObjectsEditor(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public ShapeObjectsEditor(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -44,7 +56,7 @@ public class ShapeObjectsEditor extends View implements ShapeObjectsEditorInterf
         }
 
         if (isDrawing) {
-            currentEditor.drawDottedShape(canvas);
+            currentEditor.drawDottedShape(startX, startY, endX, endY, canvas);
         }
     }
 

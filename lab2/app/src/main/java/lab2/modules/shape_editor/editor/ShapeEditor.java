@@ -35,7 +35,7 @@ public class ShapeEditor extends Editor {
     public void saveShape() {
 
     }
-    public void drawDottedShape(Canvas canvas) {
+    public void drawDottedShape(float startX, float startY, float endX, float endY, Canvas canvas) {
 
     }
 }

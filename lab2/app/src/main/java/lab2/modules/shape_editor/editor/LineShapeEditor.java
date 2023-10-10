@@ -12,7 +12,7 @@ import lab2.modules.shape_editor.utils.PaintUtils;
 
 @SuppressLint("ViewConstructor")
 public class LineShapeEditor extends ShapeEditor {
-    private LineShape lineShape;
+
     public LineShapeEditor(ShapeObjectsEditor context) {
         super(context);
     }
@@ -25,11 +25,14 @@ public class LineShapeEditor extends ShapeEditor {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 shapeObjectsEditor.isDrawing = true;
-                lineShape = new LineShape(x, y, x, y, shapeObjectsEditor.canvas);
+                shapeObjectsEditor.startX = x;
+                shapeObjectsEditor.startY = y;
+                shapeObjectsEditor.endX = x;
+                shapeObjectsEditor.endY = y;
                 break;
             case MotionEvent.ACTION_MOVE:
-                lineShape.endX = x;
-                lineShape.endY = y;
+                shapeObjectsEditor.endX = x;
+                shapeObjectsEditor.endY = y;
                 shapeObjectsEditor.invalidate();
                 break;
             case MotionEvent.ACTION_UP:
@@ -39,24 +42,19 @@ public class LineShapeEditor extends ShapeEditor {
         }
     }
     public void saveShape() {
+        LineShape lineShape = new LineShape(shapeObjectsEditor.startX, shapeObjectsEditor.startY,
+                shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
         shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = lineShape;
         shapeObjectsEditor.increment();
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
         shapeObjectsEditor.invalidate();
     }
     @Override
-    public void drawDottedShape(Canvas canvas) {
-        float dx = Math.abs(lineShape.endX - lineShape.startX);
-        float dy = Math.abs(lineShape.endY - lineShape.startY);
+    public void drawDottedShape(float startX, float startY, float endX, float endY, Canvas canvas) {
+        float dx = Math.abs(endX - startX);
+        float dy = Math.abs(endY - startY);
         if (dx >= 4 || dy >= 4) {
-            canvas.drawLine(lineShape.startX, lineShape.startY, lineShape.endX, lineShape.endY, PaintUtils.editingPaint);
+            canvas.drawLine(startX, startY, endX, endY, PaintUtils.editingPaint);
         }
     }
 }
-
-
-
-
-
-
-

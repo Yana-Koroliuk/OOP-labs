@@ -6,7 +6,6 @@ import android.graphics.Paint;
 
 import lab2.modules.shape_editor.utils.PaintUtils;
 
-// клас, що визначає точку
 public class PointShape extends Shape {
 
     public float x;

@@ -7,7 +7,6 @@ import android.graphics.Paint;
 
 import lab2.modules.shape_editor.utils.PaintUtils;
 
-// клас, що задає лінію, як фігуру
 public class LineShape extends Shape {
     public float startX;
     public float startY;

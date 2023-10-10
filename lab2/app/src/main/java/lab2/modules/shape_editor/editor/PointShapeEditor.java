@@ -11,7 +11,6 @@ import lab2.modules.shape_editor.shapes.PointShape;
 @SuppressLint("ViewConstructor")
 public class PointShapeEditor extends ShapeEditor {
 
-    private PointShape pointShape;
     public PointShapeEditor(ShapeObjectsEditor context) {
         super(context);
     }
@@ -30,13 +29,15 @@ public class PointShapeEditor extends ShapeEditor {
                 break;
             case MotionEvent.ACTION_UP:
                 shapeObjectsEditor.isDrawing = false;
-                pointShape = new PointShape(x, y, shapeObjectsEditor.canvas);
+                shapeObjectsEditor.endX = x;
+                shapeObjectsEditor.endY = y;
                 saveShape();
                 break;
         }
     }
     @Override
     public void saveShape() {
+        PointShape pointShape = new PointShape(shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
         shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = pointShape;
         shapeObjectsEditor.increment();
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
