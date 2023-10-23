@@ -1,9 +1,6 @@
 package lab3.modules.shape_editor.shapes;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.DashPathEffect;
-import android.graphics.Paint;
 
 import lab3.modules.shape_editor.utils.PaintUtils;
 
@@ -30,7 +27,7 @@ public class RectangleShape extends Shape {
         float left = Math.min(startX, endX);
         float bottom = Math.max(startY, endY);
         float top = Math.min(startY, endY);
-        canvas.drawRect(left, top , right, bottom, PaintUtils.innerRectanglePaint);
+        canvas.drawRect(left, top, right, bottom, PaintUtils.innerRectanglePaint);
         canvas.drawRect(left, top, right, bottom, PaintUtils.externalRectanglePaint);
     }
 }

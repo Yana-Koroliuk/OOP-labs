@@ -1,8 +1,6 @@
 package lab3.modules.shape_editor.shapes;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 
 import lab3.modules.shape_editor.utils.PaintUtils;
 
@@ -11,6 +9,7 @@ public class PointShape extends Shape {
     public float x;
 
     public float y;
+
     public PointShape(float x1, float y1, Canvas canvas) {
         super(x1, y1, x1, y1, canvas);
         this.x = x1;

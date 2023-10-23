@@ -1,7 +1,6 @@
 package lab3.modules;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     public ShapeObjectsEditor mShapeObjectsEditor;
     private Menu menu;
-    private LinearLayout toolbar;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         mShapeObjectsEditor = findViewById(R.id.shape_editing);
-        toolbar = findViewById(R.id.tool_bar);
+        LinearLayout toolbar = findViewById(R.id.tool_bar);
         createToolBar(toolbar);
     }
 
@@ -51,24 +49,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //MenuItem itemChosen = mainMenu.findItem(R.id.chosen);
         int id = item.getItemId();
         if (!item.isChecked()) item.setChecked(true);
         if (id == R.id.point) {
             mShapeObjectsEditor.currentEditor = new PointShapeEditor(mShapeObjectsEditor);
-            //itemChosen.setTitle(R.string.point);
             return true;
         } else if (id == R.id.line) {
             mShapeObjectsEditor.currentEditor = new LineShapeEditor(mShapeObjectsEditor);
-            //itemChosen.setTitle(R.string.line);
             return true;
         } else if (id == R.id.rectangle) {
             mShapeObjectsEditor.currentEditor = new RectangleShapeEditor(mShapeObjectsEditor);
-            //itemChosen.setTitle(R.string.rectangle);
             return true;
         } else if (id == R.id.ellipse) {
             mShapeObjectsEditor. currentEditor = new EllipseShapeEditor(mShapeObjectsEditor);
-            //itemChosen.setTitle(R.string.ellipse);
             return true;
         } else if (id == R.id.info) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

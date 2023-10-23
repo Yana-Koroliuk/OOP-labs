@@ -1,12 +1,6 @@
 package lab3.modules.shape_editor.shapes;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.DashPathEffect;
-import android.graphics.Paint;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import lab3.modules.shape_editor.utils.PaintUtils;
 

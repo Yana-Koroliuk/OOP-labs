@@ -1,7 +1,6 @@
 package lab3.modules.shape_editor.utils;
 
 import android.graphics.Color;
-import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 
 public class PaintUtils {
