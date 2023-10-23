@@ -9,14 +9,15 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.ArrayList;
+
 import lab3.modules.shape_editor.editor.ShapeEditor;
 import lab3.modules.shape_editor.shapes.Shape;
 import lab3.modules.shape_editor.utils.PaintUtils;
 
 public class ShapeObjectsEditor extends View implements ShapeObjectsEditorInterface {
     public ShapeEditor currentEditor;
-    public Shape[] showedShapes = new Shape[111];
-    public int index = 0;
+    public ArrayList<Shape> showedShapes = new ArrayList<>();
     public boolean isDrawing = false;
     public Bitmap bitmap;
     public Canvas canvas;
@@ -71,33 +72,19 @@ public class ShapeObjectsEditor extends View implements ShapeObjectsEditorInterf
 
     public void eraseLast() {
         canvas.drawColor(Color.WHITE);
-        boolean isAllNull = true;
-        for (Shape shape: showedShapes) {
-            if (shape != null) {
-                isAllNull = false;
-                break;
-            }
+        int length = showedShapes.size();
+        if (length > 1) {
+            showedShapes.remove(length - 1);
+            invalidate();
         }
-        if (!isAllNull) {
-            decrement();
-            showedShapes[index] = null;
+        if (length == 1) {
+            showedShapes.clear();
             invalidate();
         }
     }
-
-    public void increment() {
-        if (index+1 > 110) {
-            System.arraycopy(showedShapes, 1, showedShapes, 0, 110);
-            showedShapes[110] = null;
-        } else {
-            index++;
-        }
+    public void eraseAll() {
+        canvas.drawColor(Color.WHITE);
+        showedShapes.clear();
+        invalidate();
     }
-
-    public void decrement() {
-        if (index-1 >= 0) {
-            index--;
-        }
-    }
-
 }

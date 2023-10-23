@@ -38,8 +38,7 @@ public class PointShapeEditor extends ShapeEditor {
     @Override
     public void saveShape() {
         PointShape pointShape = new PointShape(shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
-        shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = pointShape;
-        shapeObjectsEditor.increment();
+        shapeObjectsEditor.showedShapes.add(pointShape);
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
         shapeObjectsEditor.invalidate();
     }

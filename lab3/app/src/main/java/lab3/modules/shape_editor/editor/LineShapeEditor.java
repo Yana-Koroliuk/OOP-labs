@@ -44,8 +44,7 @@ public class LineShapeEditor extends ShapeEditor {
     public void saveShape() {
         LineShape lineShape = new LineShape(shapeObjectsEditor.startX, shapeObjectsEditor.startY,
                 shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
-        shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = lineShape;
-        shapeObjectsEditor.increment();
+        shapeObjectsEditor.showedShapes.add(lineShape);
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
         shapeObjectsEditor.invalidate();
     }

@@ -45,20 +45,17 @@ public class RectangleShapeEditor extends ShapeEditor {
     public void saveShape() {
         RectangleShape rectangleShape = new RectangleShape(shapeObjectsEditor.startX,
                 shapeObjectsEditor.startY, shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
-        shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = rectangleShape;
-        shapeObjectsEditor.increment();
+        shapeObjectsEditor.showedShapes.add(rectangleShape);
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
         shapeObjectsEditor.invalidate();
     }
 
     @Override
     public void drawDottedShape(float startX, float startY, float endX, float endY, Canvas canvas) {
-        float rStartX = 2 * startX - endX;
-        float rStartY = 2 * startY - endY;
-        float right = Math.max(rStartX, endX);
-        float left = Math.min(rStartX, endX);
-        float bottom = Math.max(rStartY, endY);
-        float top = Math.min(rStartY, endY);
+        float right = Math.max(startX, endX);
+        float left = Math.min(startX, endX);
+        float bottom = Math.max(startY, endY);
+        float top = Math.min(startY, endY);
         canvas.drawRect(left, top, right, bottom, PaintUtils.editingPaint);
     }
 }

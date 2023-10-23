@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF139318"
+    android:orientation="vertical"
+    tools:context="lab3.modules.MainActivity" >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="UselessLeaf,UselessParent">
+        <ImageButton
+            android:id="@+id/chose_point"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/point"
+            android:src="@drawable/dot_icon"/>
+        <ImageButton
+            android:id="@+id/chose_line"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/line"
+            android:src="@drawable/line_icon"/>
+        <ImageButton
+            android:id="@+id/chose_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/rectangle"
+            android:src="@drawable/rect_icon"/>
+        <ImageButton
+            android:id="@+id/chose_ellipse"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/ellipse"
+            android:src="@drawable/ellipse_icon"/>
+        <ImageButton
+            android:id="@+id/chose_eraser"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/erase"
+            android:src="@drawable/eraser_icon"
+            android:tooltipText="@string/erase"/>
+    </LinearLayout>
+    <lab3.modules.shape_editor.ShapeObjectsEditor
+        android:id="@+id/shape_editing"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"
+        android:background="#FFFFFFFF" />
+</LinearLayout>

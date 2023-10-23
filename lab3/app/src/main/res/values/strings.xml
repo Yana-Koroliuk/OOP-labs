@@ -9,10 +9,9 @@
     <string name="ellipse">Еліпс</string>
     <string name="info_dialog_title">Довідка</string>
     <string name="info_dialog_message">
-        Цей додаток є реалізацією лабораторної роботи №2 з ООП
-    </string>
+Цей додаток є реалізацією лабораторної роботи №3 з ООП
+</string>
     <string name="info_dialog_button">Закрити</string>
     <string name="file">Файл</string>
     <string name="erase">Стерти</string>
-    <string name="nothing_chosen">"Не обрано"</string>
 </resources>

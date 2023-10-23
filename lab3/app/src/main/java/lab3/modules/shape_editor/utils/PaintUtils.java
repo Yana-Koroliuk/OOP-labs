@@ -6,11 +6,10 @@ import android.graphics.Paint;
 
 public class PaintUtils {
     public static Paint editingPaint = createEditingPaint();
-    public static Paint pointPaint = createpointPaint();
+    public static Paint pointPaint = createPointPaint();
     public static Paint linePaint = createLinePoint();
     public static Paint innerRectanglePaint = createInnerRectanglePaint();
     public static Paint externalRectanglePaint = createExternalRectanglePaint();
-    public static Paint innerEllipsePaint = createInnerEllipsePaint();
     public static Paint externalEllipsePaint = createExternalEllipsePaint();
     private static Paint createEditingPaint() {
         Paint paint = new Paint(Paint.DITHER_FLAG);
@@ -21,10 +20,9 @@ public class PaintUtils {
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(5);
-        paint.setPathEffect(new DashPathEffect(new float[]{50.0f, 20.0f}, 0));
         return paint;
     }
-    private static Paint createpointPaint() {
+    private static Paint createPointPaint() {
         Paint mPaint = new Paint(Paint.DITHER_FLAG);
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
@@ -44,7 +42,7 @@ public class PaintUtils {
         Paint mPaint = new Paint(Paint.DITHER_FLAG);
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
-        mPaint.setColor(Color.GRAY);
+        mPaint.setColor(Color.YELLOW);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -58,17 +56,6 @@ public class PaintUtils {
         mPaint.setDither(true);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.BLACK);
-        mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(5);
-        return mPaint;
-    }
-    private static Paint createInnerEllipsePaint() {
-        Paint mPaint = new Paint(Paint.DITHER_FLAG);
-        mPaint.setAntiAlias(true);
-        mPaint.setDither(true);
-        mPaint.setColor(Color.WHITE);
-        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(5);

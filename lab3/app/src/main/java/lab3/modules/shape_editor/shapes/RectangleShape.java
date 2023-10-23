@@ -26,12 +26,10 @@ public class RectangleShape extends Shape {
 
     @Override
     public void show() {
-        float rStartX = 2*startX-endX;
-        float rStartY = 2*startY-endY;
-        float right = Math.max(rStartX, endX);
-        float left = Math.min(rStartX, endX);
-        float bottom = Math.max(rStartY, endY);
-        float top = Math.min(rStartY, endY);
+        float right = Math.max(startX, endX);
+        float left = Math.min(startX, endX);
+        float bottom = Math.max(startY, endY);
+        float top = Math.min(startY, endY);
         canvas.drawRect(left, top , right, bottom, PaintUtils.innerRectanglePaint);
         canvas.drawRect(left, top, right, bottom, PaintUtils.externalRectanglePaint);
     }

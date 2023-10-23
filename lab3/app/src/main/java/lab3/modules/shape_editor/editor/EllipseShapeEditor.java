@@ -45,17 +45,18 @@ public class EllipseShapeEditor extends ShapeEditor {
     public void saveShape() {
         EllipseShape ellipseShape = new EllipseShape(shapeObjectsEditor.startX, shapeObjectsEditor.startY,
                 shapeObjectsEditor.endX, shapeObjectsEditor.endY, shapeObjectsEditor.canvas);
-        shapeObjectsEditor.showedShapes[shapeObjectsEditor.index] = ellipseShape;
-        shapeObjectsEditor.increment();
+        shapeObjectsEditor.showedShapes.add(ellipseShape);
         shapeObjectsEditor.canvas.drawColor(Color.WHITE);
         shapeObjectsEditor.invalidate();
     }
     @Override
     public void drawDottedShape(float startX, float startY, float endX, float endY, Canvas canvas) {
-        float right = Math.max(startX, endX);
-        float left = Math.min(startX, endX);
-        float bottom = Math.max(startY, endY);
-        float top = Math.min(startY, endY);
+        float rStartX = 2 * startX - endX;
+        float rStartY = 2 * startY - endY;
+        float right = Math.max(rStartX, endX);
+        float left = Math.min(rStartX, endX);
+        float bottom = Math.max(rStartY, endY);
+        float top = Math.min(rStartY, endY);
         canvas.drawOval(left, top, right, bottom, PaintUtils.editingPaint);
     }
 }
