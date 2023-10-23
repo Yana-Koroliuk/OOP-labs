@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 item.setChecked(true);
             }
         });
-        pointButton.setOnLongClickListener(new OnLongClickListener() {
+        lineButton.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 mShapeObjectsEditor.currentEditor = new LineShapeEditor(mShapeObjectsEditor);
