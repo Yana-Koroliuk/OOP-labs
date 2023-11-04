@@ -1,22 +1,26 @@
 package lab4.modules.shape_editor.shapes;
+
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-// клас, що задає лінію, як фігуру
 public class LineShape extends Shape implements LineShapeInterface {
     public Paint linePaint;
+
     public LineShape() {
         setPaint();
     }
+
     @Override
     public void show() {
         showLine(startX, startY, endX, endY);
     }
+
     @Override
     public void setPaint() {
         setLinePaint();
     }
+
     @Override
     public void setLinePaint() {
         linePaint = new Paint(Paint.DITHER_FLAG);
@@ -28,6 +32,7 @@ public class LineShape extends Shape implements LineShapeInterface {
         linePaint.setStrokeCap(Paint.Cap.ROUND);
         linePaint.setStrokeWidth(5);
     }
+
     @Override
     public void showLine(float startX, float startY, float endX, float endY) {
         float dx = Math.abs(endX - startX);
@@ -41,9 +46,10 @@ public class LineShape extends Shape implements LineShapeInterface {
     }
 
     @Override
-    public Shape createInstanceForSaving() {
+    public Shape createNextEmpty() {
         return new LineShape();
     }
+
     @Override
     public void setEditingPaint(Paint paint) {
         linePaint = paint;

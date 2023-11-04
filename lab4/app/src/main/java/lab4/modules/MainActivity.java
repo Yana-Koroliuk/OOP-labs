@@ -1,4 +1,5 @@
 package lab4.modules;
+
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -27,25 +28,23 @@ import lab4.modules.shape_editor.shapes.EllipseShape;
 import lab4.modules.shape_editor.shapes.LineShape;
 import lab4.modules.shape_editor.shapes.PointShape;
 import lab4.modules.shape_editor.shapes.RectangleShape;
-// Створення класу MainActivity, що представляє головний екран додатку
+
 public class MainActivity extends AppCompatActivity {
-    // Ініціалізація об'єктів меню та класу MyEditor
     private static MyEditor mMyEditor;
     private Menu menu;
-    private LinearLayout toolbar; // Ініціалізація toolBar
+    private LinearLayout toolbar;
     MenuItem[] items;
-    // Створюємо інтерфейс екрану
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         mMyEditor = findViewById(R.id.shape_editing);
-        // Наповнення toolBar
         toolbar = findViewById(R.id.tool_bar);
         createToolBar(toolbar);
     }
-    // Створюємо меню, за розміткою з файлу R.menu.menu
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         this.menu = menu;
@@ -54,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         init();
         return true;
     }
-    // Створюємо обробник натиску елемента меню
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(!item.isChecked()) item.setChecked(true);
+        if (!item.isChecked()) item.setChecked(true);
         if (id == R.id.point) {
             mMyEditor.start(new PointShape());
             chooseOption(0);
@@ -68,23 +67,23 @@ public class MainActivity extends AppCompatActivity {
             mMyEditor.start(new LineShape());
             chooseOption(1);
             return true;
-        } else if (id ==  R.id.rectangle) {
+        } else if (id == R.id.rectangle) {
             mMyEditor.start(new RectangleShape());
             chooseOption(2);
             return true;
-        } else if (id ==   R.id.ellipse) {
+        } else if (id == R.id.ellipse) {
             mMyEditor.start(new EllipseShape());
             chooseOption(3);
             return true;
-        } else if (id ==   R.id.circle_ended_line) {
+        } else if (id == R.id.circle_ended_line) {
             mMyEditor.start(new CircleEndedLineShape());
             chooseOption(4);
             return true;
-        } else if (id ==   R.id.cube) {
+        } else if (id == R.id.cube) {
             mMyEditor.start(new CubeShape());
             chooseOption(5);
             return true;
-        } else if (id ==   R.id.info) {
+        } else if (id == R.id.info) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle(R.string.info_dialog_title)
                     .setMessage(R.string.info_dialog_message)
@@ -101,19 +100,17 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    // Функція, що визначає масив елементів меню. Для забезпечення синхронізації
-    // вибору фігури введення
+
     private void init() {
         items = new MenuItem[]{menu.findItem(R.id.point), menu.findItem(R.id.line),
                 menu.findItem(R.id.rectangle), menu.findItem(R.id.ellipse),
                 menu.findItem(R.id.circle_ended_line), menu.findItem(R.id.cube)};
     }
+
     private void createToolBar(LinearLayout toolbar) {
-        // Створення загальних спільних параметрів кнопок
         LinearLayout.LayoutParams imageLayoutParams = new
-                        LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.FILL_PARENT);
-        // Створення кнопки для крапки
+                LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.FILL_PARENT);
         ImageButton pointButton = new ImageButton(this);
         pointButton.setImageResource(R.drawable.dot_icon);
         pointButton.setLayoutParams(imageLayoutParams);
@@ -133,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для лінії
         ImageButton lineButton = new ImageButton(this);
         lineButton.setImageResource(R.drawable.line_icon);
         lineButton.setLayoutParams(imageLayoutParams);
@@ -153,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для прямокутника
         ImageButton rectButton = new ImageButton(this);
         rectButton.setImageResource(R.drawable.rect_icon);
         rectButton.setLayoutParams(imageLayoutParams);
@@ -173,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для еліпсу
         ImageButton ellipseButton = new ImageButton(this);
         ellipseButton.setImageResource(R.drawable.ellipse_icon);
         ellipseButton.setLayoutParams(imageLayoutParams);
@@ -193,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для стирання
         ImageButton eraserButton = new ImageButton(this);
         eraserButton.setImageResource(R.drawable.eraser_icon);
         eraserButton.setLayoutParams(imageLayoutParams);
@@ -211,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для лінії з кружечками на кінцях
         ImageButton circleEndedLineButton = new ImageButton(this);
         circleEndedLineButton.setImageResource(R.drawable.circle_ended_line_icon);
         circleEndedLineButton.setLayoutParams(imageLayoutParams);
@@ -231,7 +223,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Створення кнопки для куба
         ImageButton cubeButton = new ImageButton(this);
         cubeButton.setImageResource(R.drawable.cube_icon);
         cubeButton.setLayoutParams(imageLayoutParams);
@@ -251,9 +242,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // Усі кнопки реагують на короткі та довгі натиски
-        // Саме при довгому натиску відображається підказка
-        // Додавання кнопок до toolBar
         toolbar.addView(pointButton);
         toolbar.addView(lineButton);
         toolbar.addView(rectButton);
@@ -262,13 +250,13 @@ public class MainActivity extends AppCompatActivity {
         toolbar.addView(cubeButton);
         toolbar.addView(eraserButton);
     }
-    // Функцій, що реалізує показ підказок до кнопок
+
     private void showToolTip(View view, int string) {
         Toast toast = Toast.makeText(view.getContext(), string, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
     }
-    // Функція, що обробляє обрання користувачем опції
+
     private void chooseOption(int index) {
         for (MenuItem item : items) {
             item.setChecked(false);

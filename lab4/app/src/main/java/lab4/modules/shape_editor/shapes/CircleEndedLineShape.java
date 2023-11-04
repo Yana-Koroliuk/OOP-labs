@@ -1,27 +1,31 @@
 package lab4.modules.shape_editor.shapes;
+
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-// клас, що визначає лінії з кружечками на кінцях
 public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         EllipseShapeInterface {
     public Paint linePaint;
     private Paint circlesPaint1;
     private Paint circlesPaint2;
+
     public CircleEndedLineShape() {
         setPaint();
     }
+
     @Override
     public void show() {
         showLine(startX, startY, endX, endY);
         showEllipse(startX, startY, endX, endY);
     }
+
     @Override
     public void setPaint() {
         setLinePaint();
         setEllipsePaint();
     }
+
     @Override
     public void setEllipsePaint() {
         circlesPaint1 = new Paint(Paint.DITHER_FLAG);
@@ -41,6 +45,7 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         circlesPaint2.setStrokeCap(Paint.Cap.ROUND);
         circlesPaint2.setStrokeWidth(5);
     }
+
     @Override
     public void showEllipse(float startX, float startY, float endX, float endY) {
         canvas.drawCircle(startX, startY, 30, circlesPaint1);
@@ -48,6 +53,7 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         canvas.drawCircle(endX, endY, 30, circlesPaint1);
         canvas.drawCircle(endX, endY, 30, circlesPaint2);
     }
+
     @Override
     public void setLinePaint() {
         linePaint = new Paint(Paint.DITHER_FLAG);
@@ -59,6 +65,7 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         linePaint.setStrokeCap(Paint.Cap.ROUND);
         linePaint.setStrokeWidth(5);
     }
+
     @Override
     public void showLine(float startX, float startY, float endX, float endY) {
         float dx = Math.abs(endX - startX);
@@ -70,10 +77,12 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
             canvas.drawPath(linePath, linePaint);
         }
     }
+
     @Override
-    public Shape createInstanceForSaving() {
+    public Shape createNextEmpty() {
         return new CircleEndedLineShape();
     }
+
     @Override
     public void setEditingPaint(Paint paint) {
         linePaint = paint;
