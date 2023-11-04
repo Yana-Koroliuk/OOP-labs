@@ -1,22 +1,19 @@
 package lab4.modules.shape_editor.shapes;
-
 import android.graphics.Canvas;
+import android.graphics.Paint;
 
+import lab4.modules.shape_editor.Type;
+// абстрактний клас, що визначає загальні
+// поля та методи фігури
 public abstract class Shape {
-    float startX;
-    float startY;
-    float endX;
-    float endY;
-    Canvas canvas;
-    final float TOUCH_TOLERANCE = 4;
-
-    Shape(float startX, float startY, float endX, float endY, Canvas canvas) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
-        this.canvas = canvas;
-    }
-
+    public float startX;
+    public float startY;
+    public float endX;
+    public float endY;
+    public Canvas canvas;
+    public Type type;
     public abstract void show();
+    public abstract void setPaint();
+    public abstract Shape createNewInstance();
+    public abstract void setEditingProperties(Paint paint);
 }

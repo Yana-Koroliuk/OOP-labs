@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         tools:ignore="UselessLeaf,UselessParent">
     </LinearLayout>
-    <lab4.modules.shape_editor.ShapeObjectsEditor
+    <lab4.modules.shape_editor.MyEditor
         android:id="@+id/shape_editing"
         android:layout_width="fill_parent"
         android:layout_height="0dp"

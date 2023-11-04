@@ -7,8 +7,7 @@
         app:showAsAction="always">
         <menu>
             <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/point"
+                <item android:id="@+id/point"
                     android:title="@string/point"/>
                 <item android:id="@+id/line"
                     android:title="@string/line"/>
@@ -16,6 +15,10 @@
                     android:title="@string/rectangle"/>
                 <item android:id="@+id/ellipse"
                     android:title="@string/ellipse"/>
+                <item android:id="@+id/circle_ended_line"
+                    android:title="@string/circle_ended_line"/>
+                <item android:id="@+id/cube"
+                    android:title="@string/cube"/>
             </group>
         </menu>
     </item>

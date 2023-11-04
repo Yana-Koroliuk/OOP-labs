@@ -1,31 +1,52 @@
 package lab4.modules.shape_editor.shapes;
-
-import android.graphics.Canvas;
-
-import lab4.modules.shape_editor.utils.PaintUtils;
-
-public class LineShape extends Shape {
-    public float startX;
-    public float startY;
-    public float endX;
-    public float endY;
-    Canvas canvas;
-
-    public LineShape(float startX, float startY, float endX, float endY, Canvas canvas) {
-        super(startX, startY, endX, endY, canvas);
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
-        this.canvas = canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import lab4.modules.shape_editor.Type;
+// клас, що задає лінію, як фігуру
+public class LineShape extends Shape implements LineShapeInterface {
+    public Paint linePaint;
+    public LineShape() {
+        setPaint();
+        type = Type.LINE;
+    }
+    @Override
+    public void show() {
+        showLine(startX, startY, endX, endY);
+    }
+    @Override
+    public void setPaint() {
+        setLinePaint();
+    }
+    @Override
+    public void setLinePaint() {
+        linePaint = new Paint(Paint.DITHER_FLAG);
+        linePaint.setAntiAlias(true);
+        linePaint.setDither(true);
+        linePaint.setColor(Color.BLACK);
+        linePaint.setStyle(Paint.Style.STROKE);
+        linePaint.setStrokeJoin(Paint.Join.ROUND);
+        linePaint.setStrokeCap(Paint.Cap.ROUND);
+        linePaint.setStrokeWidth(5);
+    }
+    @Override
+    public void showLine(float startX, float startY, float endX, float endY) {
+        float dx = Math.abs(endX - startX);
+        float dy = Math.abs(endY - startY);
+        if (dx >= 4 || dy >= 4) {
+            Path linePath = new Path();
+            linePath.moveTo(startX, startY);
+            linePath.lineTo(endX, endY);
+            canvas.drawPath(linePath, linePaint);
+        }
     }
 
     @Override
-    public void show() {
-        float dx = Math.abs(endX - startX);
-        float dy = Math.abs(endY - startY);
-        if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-            canvas.drawLine(startX, startY, endX, endY, PaintUtils.linePaint);
-        }
+    public Shape createNewInstance() {
+        return new LineShape();
+    }
+    @Override
+    public void setEditingProperties(Paint paint) {
+        linePaint = paint;
     }
 }
