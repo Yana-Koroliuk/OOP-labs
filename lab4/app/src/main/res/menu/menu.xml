@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Опис вигляду меню -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/objects"
+        android:title="@string/objects"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/point"
+                    android:title="@string/point"/>
+                <item android:id="@+id/line"
+                    android:title="@string/line"/>
+                <item android:id="@+id/rectangle"
+                    android:title="@string/rectangle"/>
+                <item android:id="@+id/ellipse"
+                    android:title="@string/ellipse"/>
+            </group>
+        </menu>
+    </item>
+    <item android:id="@+id/file"
+        android:title="@string/file" />
+    <item android:id="@+id/info"
+        android:title="@string/info" />
+</menu>
