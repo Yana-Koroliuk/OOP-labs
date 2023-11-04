@@ -2,7 +2,6 @@ package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import static lab4.modules.shape_editor.Type.CUBE;
 // клас, що задає куб як фігуру
 public class CubeShape extends Shape implements RectangleShapeInterface,
         LineShapeInterface{
@@ -10,7 +9,6 @@ public class CubeShape extends Shape implements RectangleShapeInterface,
     public Paint rectPaint;
     public CubeShape() {
         setPaint();
-        type = CUBE;
     }
     @Override
     public void show() {
@@ -70,7 +68,7 @@ public class CubeShape extends Shape implements RectangleShapeInterface,
         return new CubeShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {
+    public void setEditingPaint(Paint paint) {
         linePaint = paint;
         rectPaint = paint;
     }

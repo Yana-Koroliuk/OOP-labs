@@ -1,13 +1,12 @@
 package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
-import lab4.modules.shape_editor.Type;
+
 // клас, що визначає точку
 public class PointShape extends Shape{
     Paint pointPaint;
     public PointShape() {
         setPaint();
-        type = Type.POINT;
     }
     @Override
     public void show() {
@@ -28,5 +27,5 @@ public class PointShape extends Shape{
         return new PointShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {}
+    public void setEditingPaint(Paint paint) {}
 }

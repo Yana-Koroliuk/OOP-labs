@@ -3,7 +3,6 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -15,14 +14,13 @@ import android.view.View.OnLongClickListener;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import androidx.annotation.RequiresApi;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapp.R;
 
 import lab4.modules.shape_editor.MyEditor;
-import lab4.modules.shape_editor.Type;
 import lab4.modules.shape_editor.shapes.CircleEndedLineShape;
 import lab4.modules.shape_editor.shapes.CubeShape;
 import lab4.modules.shape_editor.shapes.EllipseShape;

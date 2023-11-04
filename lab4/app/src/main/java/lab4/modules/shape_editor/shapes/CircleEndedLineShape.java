@@ -2,9 +2,7 @@ package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.os.Build;
-import androidx.annotation.RequiresApi;
-import lab4.modules.shape_editor.Type;
+
 // клас, що визначає лінії з кружечками на кінцях
 public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         EllipseShapeInterface {
@@ -13,7 +11,6 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
     private Paint circlesPaint2;
     public CircleEndedLineShape() {
         setPaint();
-        type = Type.LINE_WITH_CIRCLES;
     }
     @Override
     public void show() {
@@ -78,7 +75,7 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         return new CircleEndedLineShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {
+    public void setEditingPaint(Paint paint) {
         linePaint = paint;
     }
 }

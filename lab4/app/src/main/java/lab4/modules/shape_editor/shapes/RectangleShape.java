@@ -1,14 +1,13 @@
 package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
-import lab4.modules.shape_editor.Type;
+
 // клас, що задає прямокутник, як фігуру
 public class RectangleShape extends Shape implements RectangleShapeInterface{
     public Paint rectPaint1;
     public Paint rectPaint2;
     public RectangleShape() {
         setPaint();
-        type = Type.RECTANGLE;
     }
     @Override
     public void show() {
@@ -51,7 +50,7 @@ public class RectangleShape extends Shape implements RectangleShapeInterface{
         return new RectangleShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {
+    public void setEditingPaint(Paint paint) {
         rectPaint1 = paint;
         rectPaint2 = paint;
     }

@@ -1,15 +1,12 @@
 package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Build;
-import androidx.annotation.RequiresApi;
-import lab4.modules.shape_editor.Type;
+
 // клас, що задає еліпс, як фігуру
 public class EllipseShape extends Shape implements EllipseShapeInterface {
     public Paint ellipsePaint;
     public EllipseShape() {
         setPaint();
-        type = Type.ELLIPSE;
     }
     @Override
     public void show() {
@@ -45,7 +42,7 @@ public class EllipseShape extends Shape implements EllipseShapeInterface {
         return new EllipseShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {
+    public void setEditingPaint(Paint paint) {
         ellipsePaint = paint;
     }
 }

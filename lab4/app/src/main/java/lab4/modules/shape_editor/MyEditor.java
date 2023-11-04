@@ -74,7 +74,7 @@ public class MyEditor extends View implements MyEditorInterface {
     }
     // Функція редагування введення фігури
     public void startEditing(Shape shape) {
-        shape.setEditingProperties(paint);
+        shape.setEditingPaint(paint);
         shape.show();
     }
     // Функція обробник дотиків

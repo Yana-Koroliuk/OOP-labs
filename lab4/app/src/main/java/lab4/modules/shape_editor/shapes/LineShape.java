@@ -2,13 +2,12 @@ package lab4.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import lab4.modules.shape_editor.Type;
+
 // клас, що задає лінію, як фігуру
 public class LineShape extends Shape implements LineShapeInterface {
     public Paint linePaint;
     public LineShape() {
         setPaint();
-        type = Type.LINE;
     }
     @Override
     public void show() {
@@ -46,7 +45,7 @@ public class LineShape extends Shape implements LineShapeInterface {
         return new LineShape();
     }
     @Override
-    public void setEditingProperties(Paint paint) {
+    public void setEditingPaint(Paint paint) {
         linePaint = paint;
     }
 }
