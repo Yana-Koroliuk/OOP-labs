@@ -71,7 +71,7 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         }
     }
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new CircleEndedLineShape();
     }
     @Override

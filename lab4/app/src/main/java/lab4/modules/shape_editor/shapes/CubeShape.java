@@ -64,7 +64,7 @@ public class CubeShape extends Shape implements RectangleShapeInterface,
         canvas.drawRect(left, top , right, bottom, rectPaint);
     }
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new CubeShape();
     }
     @Override

@@ -23,7 +23,7 @@ public class PointShape extends Shape{
         pointPaint.setStrokeWidth(8);
     }
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new PointShape();
     }
     @Override

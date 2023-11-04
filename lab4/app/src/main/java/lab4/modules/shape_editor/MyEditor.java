@@ -11,12 +11,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.ArrayList;
 
-import lab4.modules.shape_editor.shapes.CircleEndedLineShape;
-import lab4.modules.shape_editor.shapes.CubeShape;
-import lab4.modules.shape_editor.shapes.EllipseShape;
-import lab4.modules.shape_editor.shapes.LineShape;
-import lab4.modules.shape_editor.shapes.PointShape;
-import lab4.modules.shape_editor.shapes.RectangleShape;
 import lab4.modules.shape_editor.shapes.Shape;
 public class MyEditor extends View implements MyEditorInterface {
     // Динамічний масив фігур
@@ -69,7 +63,7 @@ public class MyEditor extends View implements MyEditorInterface {
         lastEdited.canvas = canvas;
         lastEdited.setPaint();
         showedShapes.add(lastEdited);
-        lastEdited = lastEdited.createNewInstance();
+        lastEdited = lastEdited.createInstanceForSaving();
         invalidate();
     }
     // Функція редагування введення фігури

@@ -46,7 +46,7 @@ public class RectangleShape extends Shape implements RectangleShapeInterface{
         canvas.drawRect(left, top, right, bottom, rectPaint2);
     }
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new RectangleShape();
     }
     @Override

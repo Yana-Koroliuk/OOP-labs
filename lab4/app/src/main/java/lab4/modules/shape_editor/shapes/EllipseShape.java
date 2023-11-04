@@ -38,7 +38,7 @@ public class EllipseShape extends Shape implements EllipseShapeInterface {
         canvas.drawOval(left, top, right, bottom, ellipsePaint);
     }
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new EllipseShape();
     }
     @Override

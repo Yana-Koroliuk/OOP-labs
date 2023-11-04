@@ -41,7 +41,7 @@ public class LineShape extends Shape implements LineShapeInterface {
     }
 
     @Override
-    public Shape createNewInstance() {
+    public Shape createInstanceForSaving() {
         return new LineShape();
     }
     @Override

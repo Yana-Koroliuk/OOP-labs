@@ -12,6 +12,6 @@ public abstract class Shape {
     public Canvas canvas;
     public abstract void show();
     public abstract void setPaint();
-    public abstract Shape createNewInstance();
+    public abstract Shape createInstanceForSaving();
     public abstract void setEditingPaint(Paint paint);
 }
