@@ -23,7 +23,16 @@
         </menu>
     </item>
     <item android:id="@+id/file"
-        android:title="@string/file" />
+        android:title="@string/file" >
+        <menu>
+            <item
+                android:id="@+id/save_as_file"
+                android:title="@string/save_as_file"/>
+            <item
+                android:id="@+id/load_as_file"
+                android:title="@string/load_file"/>
+        </menu>
+    </item>
     <item android:id="@+id/info"
         android:title="@string/info" />
 </menu>

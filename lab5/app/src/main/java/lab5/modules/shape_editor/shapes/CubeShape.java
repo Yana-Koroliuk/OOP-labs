@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
+import java.util.Objects;
+
 public class CubeShape extends Shape implements RectangleShapeInterface,
         LineShapeInterface {
     public Paint linePaint;
@@ -81,5 +83,16 @@ public class CubeShape extends Shape implements RectangleShapeInterface,
     public void setEditingPaint(Paint paint) {
         linePaint = paint;
         rectPaint = paint;
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        linePaint = paintStroke;
+        rectPaint = paintStroke;
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Куб";
     }
 }

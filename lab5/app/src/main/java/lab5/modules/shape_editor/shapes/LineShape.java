@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
+import java.util.Objects;
+
 public class LineShape extends Shape implements LineShapeInterface {
     public Paint linePaint;
 
@@ -53,5 +55,15 @@ public class LineShape extends Shape implements LineShapeInterface {
     @Override
     public void setEditingPaint(Paint paint) {
         linePaint = paint;
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        linePaint = paintStroke;
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Лінія";
     }
 }

@@ -3,6 +3,8 @@ package lab5.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.util.Objects;
+
 public class RectangleShape extends Shape implements RectangleShapeInterface {
     public Paint rectPaint1;
     public Paint rectPaint2;
@@ -60,5 +62,16 @@ public class RectangleShape extends Shape implements RectangleShapeInterface {
     public void setEditingPaint(Paint paint) {
         rectPaint1 = paint;
         rectPaint2 = paint;
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        rectPaint1 = paintFill;
+        rectPaint2 = paintStroke;
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Прямокутник";
     }
 }

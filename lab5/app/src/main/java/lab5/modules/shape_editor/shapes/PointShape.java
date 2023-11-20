@@ -3,6 +3,8 @@ package lab5.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.util.Objects;
+
 public class PointShape extends Shape {
     Paint pointPaint;
 
@@ -33,5 +35,16 @@ public class PointShape extends Shape {
 
     @Override
     public void setEditingPaint(Paint paint) {
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        pointPaint = paintStroke;
+        pointPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Точка";
     }
 }

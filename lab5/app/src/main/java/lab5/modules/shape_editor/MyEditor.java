@@ -12,16 +12,19 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import lab5.modules.CallBack;
 import lab5.modules.shape_editor.shapes.Shape;
 
 public class MyEditor extends View implements MyEditorInterface {
-    public ArrayList<Shape> showedShapes = new ArrayList<>();
+    public List<Shape> showedShapes = new ArrayList<>();
     public boolean isDrawing = false;
     public Paint paint;
     public Bitmap bitmap;
     public Canvas canvas;
     public Shape lastEdited;
+    public MyEditorSingleton myEditorContext;
 
     public MyEditor(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -49,6 +52,7 @@ public class MyEditor extends View implements MyEditorInterface {
         super.onDraw(canvas);
         canvas.drawBitmap(bitmap, 0, 0, paint);
         for (Shape showedShape : showedShapes) {
+            showedShape.canvas = canvas;
             showedShape.show();
         }
         if (isDrawing) {
@@ -62,10 +66,11 @@ public class MyEditor extends View implements MyEditorInterface {
         lastEdited = shape;
     }
 
-    public void addShapeToArray() {
+    public void addShapeToArray(CallBack callback) {
         lastEdited.canvas = canvas;
         lastEdited.setPaint();
         showedShapes.add(lastEdited);
+        callback.addCallBack(lastEdited);
         lastEdited = lastEdited.createNextEmpty();
         invalidate();
     }
@@ -100,7 +105,7 @@ public class MyEditor extends View implements MyEditorInterface {
             case MotionEvent.ACTION_UP:
                 isDrawing = false;
                 if (lastEdited != null) {
-                    addShapeToArray();
+                    addShapeToArray(myEditorContext.getCallback());
                 }
                 break;
         }
@@ -111,17 +116,28 @@ public class MyEditor extends View implements MyEditorInterface {
         canvas.drawColor(Color.WHITE);
         int length = showedShapes.size();
         if (length > 1) {
-            showedShapes.remove(length - 1);
+            myEditorContext.getCallback().deleteCallBack(showedShapes.size());
+            showedShapes.remove(length-1);
             invalidate();
         }
         if (length == 1) {
+            myEditorContext.getCallback().deleteCallBack(showedShapes.size());
             showedShapes.clear();
             invalidate();
         }
     }
 
+    public void eraseByIndex(int index) {
+        canvas.drawColor(Color.WHITE);
+        showedShapes.remove(index-1);
+        invalidate();
+    }
+
     public void eraseAll() {
         canvas.drawColor(Color.WHITE);
+        for (int i = showedShapes.size(); i > 0; i--) {
+            myEditorContext.getCallback().deleteCallBack(i);
+        }
         showedShapes.clear();
         invalidate();
     }

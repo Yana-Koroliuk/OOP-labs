@@ -3,6 +3,8 @@ package lab5.modules.shape_editor.shapes;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.util.Objects;
+
 public class EllipseShape extends Shape implements EllipseShapeInterface {
     public Paint ellipsePaint;
 
@@ -51,5 +53,15 @@ public class EllipseShape extends Shape implements EllipseShapeInterface {
     @Override
     public void setEditingPaint(Paint paint) {
         ellipsePaint = paint;
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        ellipsePaint = paintStroke;
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Еліпс";
     }
 }

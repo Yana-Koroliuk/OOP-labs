@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
+import java.util.Objects;
+
 public class CircleEndedLineShape extends Shape implements LineShapeInterface,
         EllipseShapeInterface {
     public Paint linePaint;
@@ -86,5 +88,17 @@ public class CircleEndedLineShape extends Shape implements LineShapeInterface,
     @Override
     public void setEditingPaint(Paint paint) {
         linePaint = paint;
+    }
+
+    @Override
+    public void setChoosePaint(Paint paintStroke, Paint paintFill) {
+        linePaint = paintStroke;
+        circlesPaint1 = paintFill;
+        circlesPaint2 = paintFill;
+    }
+
+    @Override
+    public String getNameOfShape() {
+        return "Лінія з кружечками";
     }
 }
