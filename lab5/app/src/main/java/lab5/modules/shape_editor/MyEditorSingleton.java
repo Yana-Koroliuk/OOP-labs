@@ -1,10 +1,7 @@
 package lab5.modules.shape_editor;
 
-import android.os.Build;
 import android.view.MotionEvent;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 
 import lab5.modules.CallBack;
 import lab5.modules.shape_editor.shapes.Shape;

@@ -1,7 +1,6 @@
 package lab5.modules;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -31,7 +30,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -150,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements CallBack {
                     String[] data = String.valueOf(listFiles.get(i)).split("/");
                     strings[i] = data[data.length-1];
                 }
-                final File[] selected = new File[1]; // Змінна, що зберігатиме обраний файл
+                final File[] selected = new File[1];
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
                 builder2.setTitle(R.string.info_dialog_title1)
                         .setPositiveButton(R.string.action_positive, (dialogInterface, i) -> {
@@ -167,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements CallBack {
                             dialogInterface.cancel();
                             selected[0] = null;
                         })
-                        .setSingleChoiceItems(strings, -1, (dialogInterface, i) -> selected[0] = listFiles.get(i)); // Встановлення функції, що обробляє вибір групи користувача
+                        .setSingleChoiceItems(strings, -1, (dialogInterface, i) -> selected[0] = listFiles.get(i));
                 AlertDialog dialog = builder2.create();
                 dialog.show();
             }
@@ -403,12 +401,10 @@ public class MainActivity extends AppCompatActivity implements CallBack {
     public void writeToFile() {
         try {
             MyEditor myEditorView = mMyEditorSingleton.getMyView();
-            List<String> lines = new ArrayList<>();
             String dirPath = this.getApplicationInfo().dataDir;
-            StringBuilder fileName = new StringBuilder("output");
-            fileName.append(listFiles.size());
-            fileName.append(".txt");
-            File file = new File(dirPath, String.valueOf(fileName));
+            String fileName = "output" + listFiles.size() +
+                    ".txt";
+            File file = new File(dirPath, fileName);
             file.setWritable(true);
             file.setReadable(true);
             FileWriter writer = new FileWriter(file);
@@ -424,7 +420,6 @@ public class MainActivity extends AppCompatActivity implements CallBack {
                 line.append("\t").append((int) shape.endX);
                 line.append("\t").append((int) shape.endY);
                 line.append("\n");
-                lines.add(String.valueOf(line));
                 writer.append(line);
             }
             writer.flush();
@@ -469,7 +464,6 @@ public class MainActivity extends AppCompatActivity implements CallBack {
         scan.close();
     }
 
-    // Функція, що перетворює дані з файлу
     public void createShapeToEditArray(String shapeName, int sx, int sy, int ex, int ey) {
         MyEditor myEditorView = mMyEditorSingleton.getMyView();
         Shape shape = ShapeFactory.createShapeByName(shapeName);
