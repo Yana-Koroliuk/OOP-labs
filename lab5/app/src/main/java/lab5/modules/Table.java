@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-// Клас, що реалізує таблицю
 public class Table implements TableInterface {
 
     private final Context context;
