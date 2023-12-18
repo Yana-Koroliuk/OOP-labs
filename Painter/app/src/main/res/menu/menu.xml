@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Опис меню додатку -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/zoom_in"
+        android:icon="@drawable/minus"
+        app:showAsAction="always"
+        android:title="" />
+    <item android:id="@+id/zoom_out"
+        android:icon="@drawable/plus"
+        app:showAsAction="always"
+        android:title="" />
+    <item android:id="@+id/undo"
+        android:icon="@drawable/undo"
+        app:showAsAction="always"
+        android:title="" />
+    <item android:id="@+id/redo"
+        android:icon="@drawable/redo"
+        app:showAsAction="always"
+        android:title="" />
+    <item android:id="@+id/toolbar"
+        android:icon="@drawable/table"
+        app:showAsAction="always"
+        android:title="" />
+    <item android:id="@+id/create"
+        android:title="@string/create"/>
+    <item android:id="@+id/open"
+        android:title="@string/open"/>
+    <item android:id="@+id/change"
+        android:title="@string/change_size"
+        android:enabled="false"/>
+    <item android:id="@+id/save"
+        android:title="@string/save"
+        android:enabled="false"/>
+    <item android:id="@+id/save_as"
+        android:title="@string/save_as">
+    </item>
+    <item android:id="@+id/exit"
+        android:title="@string/exit"/>
+</menu>
