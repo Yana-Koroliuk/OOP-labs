@@ -32,9 +32,7 @@ public class PainterView extends View {
     public MyScrollView scrollView;
     public MyHorizontalScrollView horizontalScrollView;
     public boolean isDrawing;
-    public List<Shape> showedShapes;
     public Bitmap mainBitmap;
-    public Bitmap imageBitmap;
     public Canvas canvas;
     public Paint paintStroke;
     public Paint paintFill;
