@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab6</string>
+    <string name="text">Введіть значення:</string>
+    <string name="n"> n = </string>
+    <string name="min">min = </string>
+    <string name="max">max = </string>
+    <string name="button_title1">Згенерувати вектор</string>
+    <string name="button_title2">Графік</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Object2</string>
+    <string name="button_title">Записати дані</string>
+    <string name="button_back_title">Назад</string>
+</resources>
