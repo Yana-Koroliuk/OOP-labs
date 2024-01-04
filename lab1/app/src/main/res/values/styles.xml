@@ -1,0 +1,9 @@
+<resources>
+    <!-- Задання теми додатку -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Задання кольорів, що визначають тему додатку -->
+        <item name="colorPrimary">#139318</item>
+        <item name="colorPrimaryDark">#022003</item>
+        <item name="colorAccent">#009688</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Створення меню -->
+    <item android:id="@+id/work1"
+        android:title="@string/action_work1"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/work2"
+        android:title="@string/action_work2"
+        app:showAsAction="always"/>
+</menu>

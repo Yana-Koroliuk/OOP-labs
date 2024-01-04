@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Створення масиву стручок, що містить назви груп -->
+    <string-array name="list_of_groups">
+        <item>ІМ-21</item>
+        <item>ІМ-22</item>
+        <item>ІМ-23</item>
+        <item>ІМ-24</item>
+        <item>ІП-21</item>
+        <item>ІП-22</item>
+        <item>ІП-23</item>
+        <item>ІП-24</item>
+        <item>ІП-25</item>
+        <item>ІО-21</item>
+        <item>ІО-22</item>
+        <item>ІО-23</item>
+        <item>ІО-24</item>
+        <item>ІО-25</item>
+        <item>ІО-26</item>
+        <item>ІО-27</item>
+        <item>ІС-21</item>
+        <item>ІС-22</item>
+        <item>ІС-23</item>
+        <item>ІК-21</item>
+        <item>ІК-22</item>
+        <item>ІК-23</item>
+        <item>ІК-24</item>
+        <item>ІА-21</item>
+        <item>ІА-22</item>
+        <item>ІА-23</item>
+        <item>ІА-24</item>
+        <item>ІМ-21мн</item>
+        <item>ІМ-21мп</item>
+        <item>ІМ-22мн</item>
+        <item>ІМ-22мп</item>
+        <item>ІМ-31мн</item>
+        <item>ІМ-31мп</item>
+        <item>ІМ-32мп</item>
+        <item>ІП-21мн</item>
+        <item>ІП-22мп</item>
+        <item>ІП-23мп</item>
+        <item>ІП-31мн</item>
+        <item>ІП-32мп</item>
+        <item>ІП-33мп</item>
+        <item>ІО-21мп</item>
+        <item>ІО-22мп</item>
+        <item>ІО-31мн</item>
+        <item>ІО-32мп</item>
+        <item>ІС-21мн</item>
+        <item>ІС-22мп</item>
+        <item>ІС-23мп</item>
+        <item>ІС-31мн</item>
+        <item>ІС-32мп</item>
+        <item>ІС-33мп</item>
+        <item>ІА-21мп</item>
+        <item>ІА-31мп</item>
+        <item>ІА-32мп</item>
+        <item>ІК-21мп</item>
+    </string-array>
+</resources>

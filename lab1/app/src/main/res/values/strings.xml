@@ -1,0 +1,11 @@
+<resources>
+    <!-- XML файл стрічок -->
+    <string name="action_work1">Робота 1</string>
+    <string name="action_work2">Робота 2</string>
+    <string name="action_positive">Так</string>
+    <string name="action_negative">Відміна</string>
+    <string name="headline1">Оберіть групу:</string>
+    <string name="headline2">Введіть текст:</string>
+    <string name="user_text_work2"> </string>
+    <string name="app_name">Lab1</string>
+</resources>
